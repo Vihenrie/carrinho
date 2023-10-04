@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, StyleSheet, View } from "react-native";
+import { Image, Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import logo from '../../../../assets/logo.png'
 
 type Props = {
@@ -7,9 +7,10 @@ type Props = {
   nomefazenda: string
   descricao: string
   preco: string
+  botao: string
 }
 
-export default function Detalhe({nome, nomefazenda, descricao, preco}: Props) {
+export default function Detalhe({nome, nomefazenda, descricao, preco, botao}: Props) {
   return (
     <>
       <Text style={estilos.nome}>{nome}</Text>
@@ -21,6 +22,9 @@ export default function Detalhe({nome, nomefazenda, descricao, preco}: Props) {
 
       <Text style={estilos.descricao}>{descricao}</Text>
       <Text style={estilos.preco}>{preco}</Text>
+      <TouchableOpacity style={estilos.botao}>
+        <Text style={estilos.textobotao}>{botao}</Text>
+      </TouchableOpacity>
     </>
   );
 }
@@ -55,5 +59,18 @@ const estilos = StyleSheet.create({
     fontFamily: "MontserratRegular",
     color: "#2A9F85",
     marginTop: 8,
+  },
+  botao: {
+    marginTop: 16,
+    backgroundColor: "#2a9f85",
+    paddingVertical: 16,
+    borderRadius: 6
+  },
+  textobotao: {
+    textAlign: "center",
+    color: "#ffffff",
+    fontSize: 16,
+    lineHeight: 16,
+    fontFamily: "MontserratBold"
   },
 });

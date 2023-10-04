@@ -13,6 +13,7 @@ export default function Carrinho() {
         nomefazenda={carrinho.detalhes.nomeFazenda}
         descricao={carrinho.detalhes.descricao}
         preco={carrinho.detalhes.preco}
+        botao={carrinho.detalhes.botao}
         />
       </View>
     </>
