@@ -4,13 +4,15 @@ import topo from '../../../../assets/topo.png'
 
 const width = Dimensions.get('screen').width;
 
-export default function Topo() {
-  return (
-    <>
+type Props = {
+  titulo: string
+}
+
+export default function Topo({titulo}: Props) {
+  return <>
       <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhes do Carrinho</Text>
+      <Text style={estilos.titulo}>{titulo}</Text>
     </>
-  );
 }
 
 const estilos = StyleSheet.create({
